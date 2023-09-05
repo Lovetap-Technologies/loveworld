@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loveworld/components/raw_material_button.dart';
 import 'package:loveworld/screens/password_screens/forgotten_password.dart';
-import 'package:loveworld/screens/signup_screen.dart';
+import 'package:loveworld/screens/signup_screens/signup_screen.dart';
 
 import '../../components/constants.dart';
 import 'home_screen.dart';
@@ -37,19 +37,21 @@ class _LoginScreenState extends State<LoginScreen> {
   );
   @override
   Widget build(BuildContext context) {
+    var _mediaquery = MediaQuery.of(context);
     return Scaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(
-              left: 20,
+              top: _mediaquery.size.height * 0.07,
               bottom: 10,
             ),
-            child: Text(
-              'Hi, Welcome!',
+            child: const Text(
+              'Login to your account',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -57,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             margin: const EdgeInsets.symmetric(
               horizontal: 20,
-              vertical: 10,
+              vertical: 5,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     'Email',
                     style: TextStyle(
-                      fontSize: 10,
+                      fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -91,7 +93,6 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             margin: const EdgeInsets.symmetric(
               horizontal: 20,
-              vertical: 10,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     'PassWord',
                     style: TextStyle(
-                      fontSize: 10,
+                      fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -136,6 +137,70 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // ignore: avoid_unnecessary_containers
+                    Container(
+                      child: Row(
+                        children: [
+                          Checkbox(
+                            activeColor: const Color.fromARGB(
+                              32,
+                              0,
+                              0,
+                              0,
+                            ),
+                            checkColor: Colors.black,
+                            side: const BorderSide(
+                              width: 1,
+                              color: Color.fromARGB(
+                                155,
+                                158,
+                                158,
+                                158,
+                              ),
+                            ),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                              5,
+                            )),
+                            value: isPassWordVisible,
+                            onChanged: (value) => setState(() {
+                              isPassWordVisible = !isPassWordVisible;
+                            }),
+                          ),
+                          const Text(
+                            'Remember Me',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Color.fromARGB(
+                                166,
+                                0,
+                                0,
+                                0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          ForgottenPassWord.id,
+                        );
+                      },
+                      child: const Text(
+                        'Forgot PassWord?',
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -143,82 +208,20 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.symmetric(
               horizontal: 20,
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // ignore: avoid_unnecessary_containers
-                Container(
-                  child: Row(
-                    children: [
-                      Checkbox(
-                        activeColor: const Color.fromARGB(
-                          32,
-                          0,
-                          0,
-                          0,
-                        ),
-                        checkColor: Colors.black,
-                        side: const BorderSide(
-                          width: 1,
-                          color: Color.fromARGB(
-                            155,
-                            158,
-                            158,
-                            158,
-                          ),
-                        ),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                          5,
-                        )),
-                        value: isPassWordVisible,
-                        onChanged: (value) => setState(() {
-                          isPassWordVisible = !isPassWordVisible;
-                        }),
-                      ),
-                      const Text(
-                        'Remember Me',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Color.fromARGB(
-                            166,
-                            0,
-                            0,
-                            0,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+            child: ExrawMaterialButton(
+              () {
+                Navigator.pushNamed(context, HomeScreen.id);
+              },
+              const Text(
+                'Log In',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      ForgottenPassWord.id,
-                    );
-                  },
-                  child: const Text(
-                    'Forgot PassWord?',
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          ExrawMaterialButton(
-            () {
-              Navigator.pushNamed(context, HomeScreen.id);
-            },
-            const Text(
-              'Log In',
-              style: TextStyle(
-                fontWeight: FontWeight.w700,
               ),
+              kbluebutton,
             ),
-            kbluebutton,
           ),
           Row(
             children: [
@@ -234,14 +237,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const Text(
-                'or with',
+                'or continue with',
                 style: TextStyle(
-                  color: Color.fromARGB(
-                    123,
-                    0,
-                    0,
-                    0,
-                  ),
+                  color: Colors.black,
                 ),
               ),
               Expanded(
@@ -257,27 +255,25 @@ class _LoginScreenState extends State<LoginScreen> {
               )
             ],
           ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(
-          //     vertical: 30,
-          //   ),
-          //   child: Row(
-          //     children: [
-          //       rawMaterialButtonLogIn(
-          //         "assets/images/apple.png",
-          //         'Apple',
-          //         7,
-          //         35,
-          //       ),
-          //       rawMaterialButtonLogIn(
-          //         "assets/images/google.png",
-          //         'Google',
-          //         35,
-          //         7,
-          //       ),
-          //     ],
-          //   ),
-          // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 30,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.asset(
+                  "google.png",
+                ),
+                Image.asset(
+                  "fb.png",
+                ),
+                Image.asset(
+                  "apple.png",
+                )
+              ],
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 20,
@@ -287,6 +283,9 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const Text(
                   'Don\'t have an account?',
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
                 ),
                 TextButton(
                   onPressed: () {
@@ -296,14 +295,29 @@ class _LoginScreenState extends State<LoginScreen> {
                     );
                   },
                   child: const Text(
-                    "Sign Up",
+                    "Register",
                     style: TextStyle(
+                      fontSize: 15,
                       fontWeight: FontWeight.w500,
+                      color: kcyanbutton,
                     ),
                   ),
                 )
               ],
             ),
+          ),
+          const Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                "Powered By Lovetap Technologies",
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           )
         ],
       ),

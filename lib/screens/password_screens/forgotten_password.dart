@@ -18,6 +18,7 @@ class ForgottenPassWord extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(
               top: 40,
+              bottom: 20,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -32,38 +33,32 @@ class ForgottenPassWord extends StatelessWidget {
                     Icons.arrow_back_ios_new,
                   ),
                 ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 40,
+                  ),
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(
-              top: 60,
-              bottom: 20,
-            ),
-            child: Text(
-              'Forgot Password?',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const Padding(
             padding: EdgeInsets.symmetric(
+              vertical: 20,
               horizontal: 20,
             ),
             child: Text(
               'Don’t worry! It happens. Please enter the email associated with your account.',
               style: TextStyle(
-                fontStyle: FontStyle.normal,
-                fontSize: 15,
-                color: Color.fromARGB(
-                  166,
-                  0,
-                  0,
-                  0,
-                ),
-              ),
+                  fontStyle: FontStyle.normal,
+                  fontSize: 15,
+                  color: Colors.black),
               overflow: TextOverflow.clip,
               textAlign: TextAlign.center,
             ),
@@ -101,17 +96,27 @@ class ForgottenPassWord extends StatelessWidget {
               ],
             ),
           ),
-          ExrawMaterialButton(
-            () {
-              Navigator.pushNamed(
-                context,
-                OTPVerification.id,
-              );
-            },
-            const Text(
-              'Send Code',
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
             ),
-            kcyanbutton,
+            child: ExrawMaterialButton(
+              () {
+                Navigator.pushNamed(
+                  context,
+                  OTPVerification.id,
+                );
+              },
+              const Text(
+                'Send Code',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+              kcyanbutton,
+            ),
           )
         ],
       ),

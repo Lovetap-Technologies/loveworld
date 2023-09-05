@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loveworld/components/constants.dart';
 import 'package:loveworld/components/raw_material_button.dart';
 import 'package:loveworld/screens/login_screen.dart';
-import 'package:loveworld/screens/signup_screen.dart';
+import 'package:loveworld/screens/signup_screens/signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static String id = 'welcome_screen';
@@ -22,7 +22,7 @@ class WelcomeScreen extends StatelessWidget {
                 top: _mediaquery.size.height * 0.30,
               ),
               child: const Text(
-                "WELCOME",
+                "WELCOME!",
                 style: TextStyle(
                   fontSize: 55,
                   fontWeight: FontWeight.bold,

@@ -5,7 +5,8 @@ import 'package:loveworld/screens/password_screens/forgotten_password.dart';
 import 'package:loveworld/screens/password_screens/otp_verification.dart';
 import 'package:loveworld/screens/password_screens/reset_password.dart';
 import 'package:loveworld/screens/password_screens/success_password.dart';
-import 'package:loveworld/screens/signup_screen.dart';
+import 'package:loveworld/screens/signup_screens/signup_screen.dart';
+import 'package:loveworld/screens/signup_screens/signup_success.dart';
 import 'package:loveworld/screens/splash_screen.dart';
 import 'package:loveworld/screens/welcome_screen.dart';
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.id: (context) => const HomeScreen(),
         WelcomeScreen.id: (context) => const WelcomeScreen(),
-        // SignUpScreen.id: (context) => SignUpScreen(),
+        SuccessFulSignup.id: (context) => const SuccessFulSignup(),
         LoginScreen.id: (context) => const LoginScreen(),
         SignUpWithMail.id: (context) => const SignUpWithMail(),
         ForgottenPassWord.id: (context) => ForgottenPassWord(),

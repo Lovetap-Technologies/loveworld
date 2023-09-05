@@ -71,6 +71,7 @@ class _OTPVerificationState extends State<OTPVerification> {
           Padding(
             padding: const EdgeInsets.only(
               top: 40,
+              bottom: 30,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -83,20 +84,17 @@ class _OTPVerificationState extends State<OTPVerification> {
                     Icons.arrow_back_ios_new,
                   ),
                 ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 40),
+                  child: Text(
+                    'OTP Verification',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ],
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(
-              top: 60,
-              bottom: 20,
-            ),
-            child: Text(
-              'Please check your email',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
             ),
           ),
           const Padding(
@@ -106,7 +104,7 @@ class _OTPVerificationState extends State<OTPVerification> {
               bottom: 30,
             ),
             child: Text(
-              'We’ve sent a code to Konethus@Konethus.com',
+              'OTP has been sent to Konethus@Konethus.com, enter the code below to continue.',
               style: TextStyle(
                 fontStyle: FontStyle.normal,
                 fontSize: 15,
@@ -147,30 +145,38 @@ class _OTPVerificationState extends State<OTPVerification> {
               ],
             ),
           ),
-          ExrawMaterialButton(
-            () {
-              Navigator.pushNamed(
-                context,
-                ResetPassWord.id,
-              );
-            },
-            const Text(
-              'Send Code',
-            ),
-            kcyanbutton,
-          ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Send code again',
-                  ),
-                ),
-              ],
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
             ),
+            child: ExrawMaterialButton(
+              () {
+                Navigator.pushNamed(
+                  context,
+                  ResetPassWord.id,
+                );
+              },
+              const Text(
+                'Send Code',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+              kcyanbutton,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Send code again',
+                ),
+              ),
+            ],
           )
         ],
       ),
