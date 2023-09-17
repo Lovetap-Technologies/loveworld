@@ -4,7 +4,7 @@ import 'package:loveworld/screens/password_screens/forgotten_password.dart';
 import 'package:loveworld/screens/signup_screens/signup_screen.dart';
 
 import '../../components/constants.dart';
-import 'home_screen.dart';
+import 'main home screen/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login_screen';

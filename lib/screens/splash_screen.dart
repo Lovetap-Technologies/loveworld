@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loveworld/screens/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'home_screen.dart';
+import 'main home screen/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   static String id = 'splash_screen';

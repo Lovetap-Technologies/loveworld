@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loveworld/components/constants.dart';
 import 'package:loveworld/components/raw_material_button.dart';
-import 'package:loveworld/screens/home_screen.dart';
+import 'package:loveworld/screens/main%20home%20screen/home_screen.dart';
 import 'package:loveworld/screens/welcome_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
