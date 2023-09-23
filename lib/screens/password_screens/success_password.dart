@@ -12,14 +12,14 @@ class SuccessFulPassword extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    var _mediaquery = MediaQuery.of(context);
+    var mediaquery = MediaQuery.of(context);
 
     return Scaffold(
       body: Column(
         children: [
           Padding(
             padding: EdgeInsets.only(
-              top: _mediaquery.size.height * 0.25,
+              top: mediaquery.size.height * 0.25,
             ),
             child: Image.asset(
               "logo.png",
@@ -43,7 +43,7 @@ class SuccessFulPassword extends StatelessWidget {
               horizontal: 20,
             ),
             child: Text(
-              'Your new password has been changed successfully. you can login to your account',
+              'Your new password has been changed successfully. You can login to your account',
               style: TextStyle(
                   fontStyle: FontStyle.normal,
                   fontSize: 15,
@@ -54,7 +54,7 @@ class SuccessFulPassword extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: _mediaquery.size.height * 0.25,
+              top: mediaquery.size.height * 0.25,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

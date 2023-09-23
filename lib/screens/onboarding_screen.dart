@@ -31,13 +31,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var _mediaquery = MediaQuery.of(context);
+    var mediaquery = MediaQuery.of(context);
     return Scaffold(
       body: DefaultTabController(
         length: 3,
         child: Stack(
           children: [
             PageView.builder(
+              itemCount: 3,
+              physics: const AlwaysScrollableScrollPhysics(),
               onPageChanged: (value) => setState(() {
                 isLastPage = value == 2;
                 index = value;
@@ -48,8 +50,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage("onboard_${index + 1}.png"),
+                  fit: mediaquery.size.width < 600 ? BoxFit.fill : BoxFit.cover,
+                  image: AssetImage("assets/onboard_${index + 1}.png"),
                 )),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,7 +70,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                        bottom: _mediaquery.size.height * 0.2,
+                        bottom: mediaquery.size.height * 0.2,
                         left: 30,
                         right: 30,
                       ),
@@ -99,9 +101,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             controller.animateToPage(
                               2,
                               duration: const Duration(
-                                seconds: 3,
+                                seconds: 1,
                               ),
-                              curve: Curves.bounceOut,
+                              curve: Curves.fastOutSlowIn,
                             );
                           },
                           child: const Text(
@@ -140,7 +142,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     controller.animateToPage(
                                   index,
                                   duration: const Duration(
-                                    seconds: 2,
+                                    seconds: 1,
                                   ),
                                   curve: Curves.easeInOut,
                                 ),
@@ -151,8 +153,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   dotColor: Color(0xFFF2994A),
                                   spacing: 5,
                                   offset: 8,
-                                  dotHeight: 8,
-                                  dotWidth: 8,
+                                  expansionFactor: 2,
+                                  dotHeight: 10,
+                                  dotWidth: 10,
                                 ),
                               ),
                             ),
@@ -177,9 +180,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             : () {
                                 controller.nextPage(
                                   duration: const Duration(
-                                    seconds: 2,
+                                    seconds: 1,
                                   ),
-                                  curve: Curves.easeInOut,
+                                  curve: Curves.fastOutSlowIn,
                                 );
                               },
                         isLastPage

@@ -17,7 +17,7 @@ class _ResetPassWordState extends State<ResetPassWord> {
   bool isPassWordVisible = false;
   @override
   Widget build(BuildContext context) {
-    var _mediaquery = MediaQuery.of(context);
+    var mediaquery = MediaQuery.of(context);
     return Scaffold(
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -178,7 +178,7 @@ class _ResetPassWordState extends State<ResetPassWord> {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: _mediaquery.size.height * 0.4,
+              top: mediaquery.size.height * 0.4,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

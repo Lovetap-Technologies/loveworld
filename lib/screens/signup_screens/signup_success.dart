@@ -12,88 +12,90 @@ class SuccessFulSignup extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    var _mediaquery = MediaQuery.of(context);
+    var mediaquery = MediaQuery.of(context);
 
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              top: _mediaquery.size.height * 0.25,
-            ),
-            child: Image.asset(
-              "logo.png",
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(
-              top: 60,
-              bottom: 20,
-            ),
-            child: Text(
-              'CONGRATULATIONS!',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                top: mediaquery.size.height * 0.25,
+              ),
+              child: Image.asset(
+                "assets/logo.png",
               ),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 20,
+            const Padding(
+              padding: EdgeInsets.only(
+                top: 60,
+                bottom: 20,
+              ),
+              child: Text(
+                'CONGRATULATIONS!',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-            child: Text(
-              'Your account has been created',
-              style: TextStyle(
-                  fontStyle: FontStyle.normal,
-                  fontSize: 15,
-                  color: Colors.black),
-              overflow: TextOverflow.clip,
-              textAlign: TextAlign.center,
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: Text(
+                'Your account has been created',
+                style: TextStyle(
+                    fontStyle: FontStyle.normal,
+                    fontSize: 15,
+                    color: Colors.black),
+                overflow: TextOverflow.clip,
+                textAlign: TextAlign.center,
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              top: _mediaquery.size.height * 0.25,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 20,
-                  ),
-                  child: ExrawMaterialButton(
-                    () {
-                      Navigator.pushNamed(
-                        context,
-                        LoginScreen.id,
-                      );
-                    },
-                    const Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: mediaquery.size.height * 0.15,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 20,
                     ),
-                    kcyanbutton,
+                    child: ExrawMaterialButton(
+                      () {
+                        Navigator.pushNamed(
+                          context,
+                          LoginScreen.id,
+                        );
+                      },
+                      const Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                      kcyanbutton,
+                    ),
                   ),
-                ),
-                const Text(
-                  "Powered By Lovetap Technologies",
-                  style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.bold,
+                  const Text(
+                    "Powered By Lovetap Technologies",
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,6 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
-
-import '../../../components/constants.dart';
 import 'btm nav bar/events.dart';
 import 'btm nav bar/profile.dart';
 import 'btm nav bar/schedule.dart';
@@ -30,12 +30,15 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Scaffold(
           bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
             selectedLabelStyle: const TextStyle(
               fontSize: 12,
             ),
             currentIndex: _currentIndex,
             backgroundColor: Colors.white,
-            selectedItemColor: kcyanbutton,
+            selectedItemColor: Colors.indigo,
             unselectedItemColor: const Color.fromARGB(
               183,
               158,
@@ -48,32 +51,33 @@ class _HomeScreenState extends State<HomeScreen> {
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.home_outlined,
+                  EvaIcons.homeOutline,
                 ),
                 label: 'Task Center',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.account_circle,
+                  EvaIcons.personOutline,
                 ),
                 label: 'Shorts',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.timer_rounded,
+                  EvaIcons.clockOutline,
                   size: 30,
                 ),
                 label: 'Post',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.notifications_outlined,
+                  EvaIcons.bookOutline,
                 ),
                 label: 'Notification',
               ),
               BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.account_circle_outlined,
+                icon: FaIcon(
+                  FontAwesomeIcons.ticketSimple,
+                  color: Colors.deepOrange,
                 ),
                 label: 'User',
               ),

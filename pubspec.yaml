@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  eva_icons_flutter: ^3.1.0
+  font_awesome_flutter:
   smooth_page_indicator:
    git:  
     url: https://github.com/Milad-Akarie/smooth_page_indicator.git 

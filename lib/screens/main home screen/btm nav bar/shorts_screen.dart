@@ -27,7 +27,7 @@ class _ShortsScreenState extends State<ShortsScreen> {
                     height: 50,
                     width: 100,
                     child: Image.asset(
-                      'assets/images/konethus.png',
+                      'assets/logo.png',
                     ),
                   ),
                 ),
@@ -43,7 +43,7 @@ class _ShortsScreenState extends State<ShortsScreen> {
                 top: 10,
               ),
               child: ListView(
-                children: [],
+                children: const [],
               ),
             ),
           )

@@ -11,12 +11,12 @@ class NotificationsScreen extends StatefulWidget {
 class _NotificationsScreenState extends State<NotificationsScreen> {
   @override
   Widget build(BuildContext context) {
-    var _mediaquery = MediaQuery.of(context);
+    var mediaquery = MediaQuery.of(context);
     return DefaultTabController(
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: _mediaquery.size.height * 0.15,
+          toolbarHeight: mediaquery.size.height * 0.15,
           title: const Center(
             child: Text(
               'Notification',
@@ -75,8 +75,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             ],
           ),
         ),
-        body: Column(
-          children: const [
+        body: const Column(
+          children: [
             Text(
               'Notification',
             ),
