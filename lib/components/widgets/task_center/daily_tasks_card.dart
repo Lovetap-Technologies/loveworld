@@ -59,7 +59,8 @@ class DailyTaskCard extends StatelessWidget {
                     const SizedBox(width: 5),
                     Column(
                       children: [
-                        Icon(Icons.star, size: 15, color: foregroundColor),
+                        Icon(Icons.timer_rounded,
+                            size: 15, color: foregroundColor),
                         const SizedBox(height: 10),
                       ],
                     )

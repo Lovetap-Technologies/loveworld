@@ -50,7 +50,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                  fit: mediaquery.size.width < 600 ? BoxFit.fill : BoxFit.cover,
+                  fit:
+                      mediaquery.size.width < 600 ? BoxFit.cover : BoxFit.cover,
                   image: AssetImage("assets/onboard_${index + 1}.png"),
                 )),
                 child: Column(
@@ -88,15 +89,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
             Container(
               margin: const EdgeInsets.only(
-                right: 10,
+                right: 20,
+                left: 20,
                 top: 40,
+                bottom: 20,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   isLastPage
                       ? const SizedBox.shrink()
-                      : TextButton(
+                      : ElevatedButton(
                           onPressed: () {
                             controller.animateToPage(
                               2,
@@ -110,7 +113,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             "Skip",
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              color: Color(0xFFF34068),
+                              color: Colors.indigo,
                             ),
                           ),
                         ),
@@ -150,7 +153,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 count: 3,
                                 effect: const ExpandingDotsEffect(
                                   activeDotColor: Color(0xFF2F80ED),
-                                  dotColor: Color(0xFFF2994A),
+                                  dotColor: Colors.white,
                                   spacing: 5,
                                   offset: 8,
                                   expansionFactor: 2,
@@ -182,7 +185,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   duration: const Duration(
                                     seconds: 1,
                                   ),
-                                  curve: Curves.fastOutSlowIn,
+                                  curve: Curves.easeInOut,
                                 );
                               },
                         isLastPage
@@ -191,7 +194,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w700,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 1,
                                 ),
                               )
                             : const Text(
@@ -199,7 +203,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 0.8,
                                 ),
                               ),
                         kcyanbutton,

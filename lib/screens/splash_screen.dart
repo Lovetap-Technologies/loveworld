@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loveworld/screens/onboarding_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'main home screen/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,16 +14,16 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    _nanigateToHome();
+    _navigateToHome();
     super.initState();
   }
 
-  _nanigateToHome() async {
+  _navigateToHome() async {
     // final prefs = await SharedPreferences.getInstance();
     // final showHome = prefs.getBool('showHome') ?? false;
     await Future.delayed(
       const Duration(
-        seconds: 3,
+        milliseconds: 2500,
       ),
     );
 // ignore: use_build_context_synchronously
@@ -59,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: const EdgeInsets.all(15),
+        margin: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,8 +78,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 const Text(
                   "Loveworld Teens & Youth Ministry",
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],
@@ -91,10 +89,10 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "Powered By Lovetap Technologies",
+                  "Powered By LoveTap Technologies",
                   style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
               ],

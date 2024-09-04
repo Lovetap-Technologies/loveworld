@@ -7,19 +7,22 @@ rawMaterialButton(
   Widget child,
   Color color,
 ) {
-  return RawMaterialButton(
-      fillColor: color,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(
-          25,
+  return Padding(
+    padding: const EdgeInsets.only(top: 30.0),
+    child: RawMaterialButton(
+        fillColor: color,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+            25,
+          ),
         ),
-      ),
-      constraints: const BoxConstraints.tightFor(
-        height: 50,
-        width: 130,
-      ),
-      onPressed: onpressed,
-      child: child);
+        constraints: const BoxConstraints.tightFor(
+          height: 50,
+          width: 130,
+        ),
+        onPressed: onpressed,
+        child: child),
+  );
 }
 
 ExrawMaterialButton(

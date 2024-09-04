@@ -24,13 +24,16 @@ class _HomeState extends State<Home> {
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(EvaIcons.menu, color: Color(0xff595085), size: 30),
+                Icon(EvaIcons.menu, color: Color(0xff8B97A8), size: 30),
                 Text(
                   "Task Center",
-                  style: TextStyle(color: Color(0xff595085), fontSize: 20),
+                  style: TextStyle(
+                      color: Color(0xff595085),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500),
                 ),
                 Icon(EvaIcons.settings2Outline,
-                    color: Color(0xff595085), size: 31),
+                    color: Color(0xff8B97A8), size: 31),
               ],
             ),
           ),
@@ -109,7 +112,7 @@ class _HomeState extends State<Home> {
                             children: [
                               const SizedBox(width: 18),
                               DailyTaskCard(
-                                title: 'Win 2 souls Daily',
+                                title: 'Win 5 souls Daily',
                                 timesDone: '3',
                                 backgroundColor: const Color(0xffF6F5FB),
                                 foregroundColor: const Color(0xff403572),

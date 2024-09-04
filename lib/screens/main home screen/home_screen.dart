@@ -2,9 +2,9 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'btm nav bar/events.dart';
-import 'btm nav bar/profile.dart';
-import 'btm nav bar/schedule.dart';
 import 'btm nav bar/shorts_screen.dart';
+import 'btm nav bar/schedule.dart';
+import 'btm nav bar/profile.dart';
 import 'btm nav bar/task_center.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   final pages = [
     const Home(),
-    const ShortsScreen(),
+    const Profile(),
     const PostScreen(),
     const NotificationsScreen(),
     const UserScreen()
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(
                   EvaIcons.personOutline,
                 ),
-                label: 'Shorts',
+                label: 'Profile',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
