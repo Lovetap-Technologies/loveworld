@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loveworld/components/raw_material_button.dart';
 import '../../components/constants.dart';
-import 'reset_password.dart';
+import 'reset_Password.dart';
 
 class OTPVerification extends StatefulWidget {
   static String id = 'otp_verification';
@@ -151,10 +151,10 @@ class _OTPVerificationState extends State<OTPVerification> {
             ),
             child: ExrawMaterialButton(
               () {
-                Navigator.pushNamed(
-                  context,
-                  ResetPassWord.id,
-                );
+                // Navigator.pushNamed(
+                //   context,
+                //   // ResetPassWord.id,
+                // );
               },
               const Text(
                 'Send Code',

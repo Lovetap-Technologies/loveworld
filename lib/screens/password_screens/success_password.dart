@@ -5,7 +5,7 @@ import 'package:loveworld/components/raw_material_button.dart';
 import '../login_screen.dart';
 
 class SuccessFulPassword extends StatelessWidget {
-  static String id = 'successful_password';
+  static String id = 'successful_Password';
   const SuccessFulPassword({super.key});
 
   @override
@@ -43,7 +43,7 @@ class SuccessFulPassword extends StatelessWidget {
               horizontal: 20,
             ),
             child: Text(
-              'Your new password has been changed successfully. You can login to your account',
+              'Your new Password has been changed successfully. You can login to your account',
               style: TextStyle(
                   fontStyle: FontStyle.normal,
                   fontSize: 15,

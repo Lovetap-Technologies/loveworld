@@ -17,9 +17,9 @@ class SignUpWithMail extends StatefulWidget {
 
 class _SignUpWithMailState extends State<SignUpWithMail> {
   final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  String passWord = '';
-  bool isPassWordVisible = false;
+  final PasswordController = TextEditingController();
+  String Password = '';
+  bool isPasswordVisible = false;
   bool iAgree = false;
 
   @override
@@ -138,7 +138,7 @@ class _SignUpWithMailState extends State<SignUpWithMail> {
                             onFieldSubmitted: (value) => setState(() {
                               // authenticationService.signup(
                               //   email: value,
-                              //   password: '',
+                              //   Password: '',
                               // );
                             }),
                             style: const TextStyle(
@@ -202,7 +202,7 @@ class _SignUpWithMailState extends State<SignUpWithMail> {
                             bottom: 5,
                           ),
                           child: Text(
-                            'PassWord',
+                            'Password',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
@@ -211,28 +211,28 @@ class _SignUpWithMailState extends State<SignUpWithMail> {
                         ),
                         TextFormField(
                           textInputAction: TextInputAction.next,
-                          controller: passwordController,
+                          controller: PasswordController,
                           onChanged: (value) => setState(() {}),
                           onFieldSubmitted: (value) => setState(() {
                             // authenticationService.signup(
                             //   email: '',
-                            //   password: value,
+                            //   Password: value,
                             // );
                           }),
                           style: const TextStyle(
                             fontSize: 15,
                           ),
                           keyboardType: TextInputType.visiblePassword,
-                          obscureText: !isPassWordVisible,
+                          obscureText: !isPasswordVisible,
                           decoration: inPutDecoration.copyWith(
-                            hintText: 'Enter PassWord',
+                            hintText: 'Enter Password',
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
-                                  isPassWordVisible = !isPassWordVisible;
+                                  isPasswordVisible = !isPasswordVisible;
                                 });
                               },
-                              icon: isPassWordVisible
+                              icon: isPasswordVisible
                                   ? const Icon(
                                       Icons.visibility_outlined,
                                     )
@@ -257,7 +257,7 @@ class _SignUpWithMailState extends State<SignUpWithMail> {
                             bottom: 5,
                           ),
                           child: Text(
-                            'Confirm PassWord',
+                            'Confirm Password',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
@@ -267,25 +267,25 @@ class _SignUpWithMailState extends State<SignUpWithMail> {
                         TextFormField(
                           textInputAction: TextInputAction.next,
                           onChanged: (value) => setState(() {
-                            passWord = value;
+                            Password = value;
                           }),
                           onFieldSubmitted: (value) => setState(() {
-                            passWord = value;
+                            Password = value;
                           }),
                           style: const TextStyle(
                             fontSize: 15,
                           ),
                           keyboardType: TextInputType.visiblePassword,
-                          obscureText: !isPassWordVisible,
+                          obscureText: !isPasswordVisible,
                           decoration: inPutDecoration.copyWith(
-                            hintText: 'Enter PassWord',
+                            hintText: 'Enter Password',
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
-                                  isPassWordVisible = !isPassWordVisible;
+                                  isPasswordVisible = !isPasswordVisible;
                                 });
                               },
-                              icon: isPassWordVisible
+                              icon: isPasswordVisible
                                   ? const Icon(
                                       Icons.visibility_outlined,
                                     )

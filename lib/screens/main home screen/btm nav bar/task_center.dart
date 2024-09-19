@@ -1,4 +1,3 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:loveworld/components/widgets/task_center/tasks.dart';
@@ -19,24 +18,6 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            margin: const EdgeInsets.only(right: 20, left: 20, top: 50),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(EvaIcons.menu, color: Color(0xff8B97A8), size: 30),
-                Text(
-                  "Task Center",
-                  style: TextStyle(
-                      color: Color(0xff595085),
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500),
-                ),
-                Icon(EvaIcons.settings2Outline,
-                    color: Color(0xff8B97A8), size: 31),
-              ],
-            ),
-          ),
           Expanded(
             child: Container(
               margin: const EdgeInsets.only(
@@ -58,37 +39,34 @@ class _HomeState extends State<Home> {
                               letterSpacing: 1),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SizedBox(
-                          height: 80,
-                          child: ListView(
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              const SizedBox(width: 18),
-                              NewsCard(
-                                title: 'Short news title will be here',
-                                color1: const Color(0xff25196B),
-                                color2: const Color(0xffD994A7),
-                                onPressed: () {},
-                              ),
-                              const SizedBox(width: 18),
-                              NewsCard(
-                                title: 'Short news title will be here',
-                                color1: const Color(0xff25196B),
-                                color2: const Color(0xff94D9B4),
-                                onPressed: () {},
-                              ),
-                              const SizedBox(width: 18),
-                              NewsCard(
-                                title: 'Short news title will be here',
-                                color1: const Color(0xff65616B),
-                                color2: const Color(0xff2679B4),
-                                onPressed: () {},
-                              ),
-                              const SizedBox(width: 10),
-                            ],
-                          ),
+                      SizedBox(
+                        height: 80,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            const SizedBox(width: 18),
+                            NewsCard(
+                              title: 'Short news title will be here',
+                              color1: const Color(0xff25196B),
+                              color2: const Color(0xffD994A7),
+                              onPressed: () {},
+                            ),
+                            const SizedBox(width: 18),
+                            NewsCard(
+                              title: 'Short news title will be here',
+                              color1: const Color(0xff25196B),
+                              color2: const Color(0xff94D9B4),
+                              onPressed: () {},
+                            ),
+                            const SizedBox(width: 18),
+                            NewsCard(
+                              title: 'Short news title will be here',
+                              color1: const Color(0xff65616B),
+                              color2: const Color(0xff2679B4),
+                              onPressed: () {},
+                            ),
+                            const SizedBox(width: 10),
+                          ],
                         ),
                       ),
                       const Padding(

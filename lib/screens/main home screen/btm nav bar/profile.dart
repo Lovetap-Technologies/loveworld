@@ -1,91 +1,181 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class Profile extends StatefulWidget {
-  static String id = 'profile';
-  const Profile({super.key});
+class Profile extends StatelessWidget {
+  const Profile({Key? key}) : super(key: key);
 
-  @override
-  State<Profile> createState() => _ProfileState();
-}
-
-class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: const EdgeInsets.only(right: 20, left: 20, top: 50),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(EvaIcons.menu, color: Color(0xff8B97A8), size: 30),
-                Text(
-                  "Profile",
-                  style: TextStyle(
-                      color: Color(0xff595085),
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500),
-                ),
-                Icon(EvaIcons.settings2Outline,
-                    color: Color(0xFF8B97A8), size: 31),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.only(top: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                            width: MediaQuery.of(context).size.width - 200,
+    return DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          body: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SingleChildScrollView(
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Good morning,\nPleroma',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black),
+                    ),
+                    const SizedBox(height: 24),
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      height: 350,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 1, color: Colors.grey),
+                          borderRadius: BorderRadius.circular(25)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: double.infinity,
+                            margin: EdgeInsets.only(bottom: 10),
+                            height: 170,
+                            padding: EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: Colors.blueGrey.withOpacity(0.15),
+                              borderRadius: BorderRadius.circular(23),
+                            ),
                             child: CircleAvatar(
-                              radius: 60,
-                              backgroundImage: const CachedNetworkImageProvider(
-                                "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wwu1?ver=1587",
+                              backgroundColor: Colors.white,
+                              child: CircleAvatar(
+                                radius: 60,
+                                backgroundImage: AssetImage('assets/logo.png'),
                               ),
-                              child: Stack(
-                                alignment: Alignment.centerRight,
-                                children: [
-                                  Positioned(
-                                    left: 110,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 8.0),
-                                      child: Container(
-                                          height: 40,
-                                          width: 40,
-                                          decoration: BoxDecoration(
-                                              color: Colors.deepOrangeAccent,
-                                              shape: BoxShape.circle,
-                                              border: Border.all(
-                                                  color: Colors.white,
-                                                  width: 3)),
-                                          child: const Icon(
-                                              Icons.cameraswitch_sharp,
-                                              size: 25,
-                                              color: Colors.white)),
-                                    ),
-                                  )
-                                ],
+                            ),
+                          ),
+                          Text(
+                            'Pleroma Emmanuel',
+                            style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            'Youth Church Pastor',
+                            style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w300,
+                                color: Colors.black),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(
+                                    top: 10, right: 10, bottom: 10),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 12, vertical: 4),
+                                decoration: BoxDecoration(
+                                  color: Colors.pink.shade400,
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Text(
+                                  'CEYC Doxa',
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
-                            )),
+                              Container(
+                                margin: EdgeInsets.only(top: 10, bottom: 10),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 12, vertical: 4),
+                                decoration: BoxDecoration(
+                                  color: Colors.pink.shade400,
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Text(
+                                  'Accra, Ghana',
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Unique ID: ',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey.withOpacity(0.5),
+                                ),
+                              ),
+                              Text(
+                                'LWTYM-14234 ',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    // TabBar and TabBarView
+                    const TabBar(
+                      labelColor: Colors.pink,
+                      unselectedLabelColor: Colors.grey,
+                      indicatorColor: Colors.pink,
+                      tabs: [
+                        Tab(text: 'Partnership'),
+                        Tab(text: 'Activities'),
                       ],
                     ),
-                  )
-                ],
+                    const SizedBox(height: 16),
+                    Expanded(
+                      child: TabBarView(
+                        physics: NeverScrollableScrollPhysics(),
+                        children: [
+                          Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'You don\'t have any partnership record yet',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'No activities available',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          )
-        ],
-      ),
-    );
+          ),
+        ));
   }
 }

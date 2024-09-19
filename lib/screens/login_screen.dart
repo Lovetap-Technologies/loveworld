@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loveworld/components/raw_material_button.dart';
-import 'package:loveworld/screens/password_screens/forgotten_password.dart';
+import 'package:loveworld/screens/Password_screens/forgotten_Password.dart';
 import 'package:loveworld/screens/signup_screens/signup_screen.dart';
 
 import '../../components/constants.dart';
@@ -16,8 +16,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
-  final passWord = TextEditingController();
-  bool isPassWordVisible = false;
+  final Password = TextEditingController();
+  bool isPasswordVisible = false;
   bool rememberMe = false;
 
   @override
@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
     emailController.addListener(() {
       setState(() {});
     });
-    passWord.addListener(() {
+    Password.addListener(() {
       setState(() {});
     });
     super.initState();
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   TextFormField(
-                    controller: passWord,
+                    controller: Password,
                     onChanged: (value) => setState(() {}),
                     onFieldSubmitted: (value) => setState(() {}),
                     style: const TextStyle(
@@ -123,16 +123,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     keyboardType: TextInputType.visiblePassword,
                     textInputAction: TextInputAction.done,
-                    obscureText: !isPassWordVisible,
+                    obscureText: !isPasswordVisible,
                     decoration: inPutDecoration.copyWith(
-                      hintText: 'Enter PassWord',
+                      hintText: 'Enter Password',
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
-                            isPassWordVisible = !isPassWordVisible;
+                            isPasswordVisible = !isPasswordVisible;
                           });
                         },
-                        icon: isPassWordVisible
+                        icon: isPasswordVisible
                             ? const Icon(
                                 Icons.visibility_outlined,
                               )
@@ -193,13 +193,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(
-                            context,
-                            ForgottenPassWord.id,
-                          );
+                          // Navigator.pushNamed(
+                          //   context,
+                          //   ForgottenPassWord.id,
+                          // );
                         },
                         child: const Text(
-                          'Forgot PassWord?',
+                          'Forgot Password?',
                           style: TextStyle(
                             fontSize: 14,
                           ),

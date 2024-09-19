@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:loveworld/screens/main%20home%20screen/home_screen.dart';
 import 'package:loveworld/screens/login_screen.dart';
-import 'package:loveworld/screens/password_screens/forgotten_password.dart';
-import 'package:loveworld/screens/password_screens/otp_verification.dart';
-import 'package:loveworld/screens/password_screens/reset_password.dart';
-import 'package:loveworld/screens/password_screens/success_password.dart';
+import 'package:loveworld/screens/Password_screens/forgotten_Password.dart';
+import 'package:loveworld/screens/Password_screens/otp_verification.dart';
+import 'package:loveworld/screens/Password_screens/reset_Password.dart';
+import 'package:loveworld/screens/Password_screens/success_Password.dart';
 import 'package:loveworld/screens/signup_screens/signup_screen.dart';
 import 'package:loveworld/screens/signup_screens/signup_success.dart';
 import 'package:loveworld/screens/splash_screen.dart';
@@ -22,12 +23,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'LWTYM',
       theme: ThemeData(
+        fontFamily: 'Poppins',
         useMaterial3: true,
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.purple,
       ),
       home: const SplashScreen(),
       routes: {
@@ -36,8 +38,8 @@ class MyApp extends StatelessWidget {
         SuccessFulSignup.id: (context) => const SuccessFulSignup(),
         LoginScreen.id: (context) => const LoginScreen(),
         SignUpWithMail.id: (context) => const SignUpWithMail(),
-        ForgottenPassWord.id: (context) => ForgottenPassWord(),
-        ResetPassWord.id: (context) => const ResetPassWord(),
+        // ForgottenPassWord.id: (context) => ForgottenPassWord(),
+        // ResetPassWord.id: (context) => const ResetPassWord(),
         OTPVerification.id: (context) => const OTPVerification(),
         SuccessFulPassword.id: (context) => const SuccessFulPassword(),
         // AddDetails.id: (context) => const AddDetails(),

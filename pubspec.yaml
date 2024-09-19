@@ -44,6 +44,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.0.12
   flutter_launcher_icons:
+  neumorphic_button: ^0.0.1+2
+  get:
+  intl:
+  intl_phone_number_input:
+  country_picker:
+  country_code_picker:
+  video_player:
+  flutter_animated_icons:
 
 dev_dependencies:
   flutter_test:
@@ -101,10 +109,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/Poppins-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

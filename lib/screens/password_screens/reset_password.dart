@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:loveworld/components/raw_material_button.dart';
-import 'package:loveworld/screens/password_screens/success_password.dart';
+import 'package:loveworld/screens/Password_screens/success_Password.dart';
 
 import '../../components/constants.dart';
 
-class ResetPassWord extends StatefulWidget {
-  static String id = 'reset_password';
-  const ResetPassWord({super.key});
+class ResetPassword extends StatefulWidget {
+  static String id = 'reset_Password';
+  const ResetPassword({super.key});
 
   @override
-  State<ResetPassWord> createState() => _ResetPassWordState();
+  State<ResetPassword> createState() => _ResetPasswordState();
 }
 
-class _ResetPassWordState extends State<ResetPassWord> {
-  String passWord = '';
-  bool isPassWordVisible = false;
+class _ResetPasswordState extends State<ResetPassword> {
+  String Password = '';
+  bool isPasswordVisible = false;
   @override
   Widget build(BuildContext context) {
     var mediaquery = MediaQuery.of(context);
@@ -43,7 +43,7 @@ class _ResetPassWordState extends State<ResetPassWord> {
                     left: 40,
                   ),
                   child: Text(
-                    'Set new password',
+                    'Set new Password',
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -83,7 +83,7 @@ class _ResetPassWordState extends State<ResetPassWord> {
                     bottom: 5,
                   ),
                   child: Text(
-                    'New PassWord',
+                    'New Password',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
@@ -92,25 +92,25 @@ class _ResetPassWordState extends State<ResetPassWord> {
                 ),
                 TextFormField(
                   onChanged: (value) => setState(() {
-                    passWord = value;
+                    Password = value;
                   }),
                   onFieldSubmitted: (value) => setState(() {
-                    passWord = value;
+                    Password = value;
                   }),
                   style: const TextStyle(
                     fontSize: 15,
                   ),
                   keyboardType: TextInputType.visiblePassword,
-                  obscureText: !isPassWordVisible,
+                  obscureText: !isPasswordVisible,
                   decoration: inPutDecoration.copyWith(
-                    hintText: 'Enter PassWord',
+                    hintText: 'Enter Password',
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
-                          isPassWordVisible = !isPassWordVisible;
+                          isPasswordVisible = !isPasswordVisible;
                         });
                       },
-                      icon: isPassWordVisible
+                      icon: isPasswordVisible
                           ? const Icon(
                               Icons.visibility_outlined,
                             )
@@ -136,7 +136,7 @@ class _ResetPassWordState extends State<ResetPassWord> {
                     bottom: 5,
                   ),
                   child: Text(
-                    'Confirm New PassWord',
+                    'Confirm New Password',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
@@ -145,25 +145,25 @@ class _ResetPassWordState extends State<ResetPassWord> {
                 ),
                 TextFormField(
                   onChanged: (value) => setState(() {
-                    passWord = value;
+                    Password = value;
                   }),
                   onFieldSubmitted: (value) => setState(() {
-                    passWord = value;
+                    Password = value;
                   }),
                   style: const TextStyle(
                     fontSize: 15,
                   ),
                   keyboardType: TextInputType.visiblePassword,
-                  obscureText: !isPassWordVisible,
+                  obscureText: !isPasswordVisible,
                   decoration: inPutDecoration.copyWith(
-                    hintText: 'Enter PassWord',
+                    hintText: 'Enter Password',
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
-                          isPassWordVisible = !isPassWordVisible;
+                          isPasswordVisible = !isPasswordVisible;
                         });
                       },
-                      icon: isPassWordVisible
+                      icon: isPasswordVisible
                           ? const Icon(
                               Icons.visibility_outlined,
                             )
@@ -197,7 +197,7 @@ class _ResetPassWordState extends State<ResetPassWord> {
                       );
                     },
                     const Text(
-                      'Confirm PassWord',
+                      'Confirm Password',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

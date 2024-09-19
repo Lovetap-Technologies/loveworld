@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:loveworld/components/raw_material_button.dart';
-import 'package:loveworld/screens/password_screens/otp_verification.dart';
+import 'package:loveworld/screens/Password_screens/otp_verification.dart';
 import '../../components/constants.dart';
 
-class ForgottenPassWord extends StatelessWidget {
-  static String id = 'Forgotten_password_screen';
+class ForgottenPassword extends StatelessWidget {
+  static String id = 'Forgotten_Password_screen';
   final emailController = TextEditingController();
-  ForgottenPassWord({super.key});
+  ForgottenPassword({super.key});
 
   @override
   Widget build(
